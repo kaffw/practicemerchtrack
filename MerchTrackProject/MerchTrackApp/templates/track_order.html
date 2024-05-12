@@ -1,6 +1,46 @@
 {% extends 'navigator.html' %} {% block title%} Merch Track Order Tracking Page {% endblock %}
 {% block content %}
-<div class="main_element">
-    <h1>Order Tracking Page</h1>
+<div class="track_main_container">
+    <div class="main_centralized">
+        <h1>Order Tracking Page</h1>
+        
+        <div class="track_first">
+            <div class="track_first_left">
+                <h2>Order ID: 147891248970</h2> <!--class="track_first_left"-->
+            </div>
+            <div class="track_first_right">
+                <button>Invoice</button>
+                <button>Track Order</button>
+            </div>
+        </div>
+
+        <div class="track_second">
+            <div class="track_second_left">
+                <h4 class="track_second_left_content" style="padding-right: 12px;"><b>Order Date:</b> February 2, 2024</h4> <!--date = pH-->
+                <h4 class="track_second_left_content" style="padding-right: 12px;">Estimated Distribution Date: March 22, 2024</h4> <!--date = pH-->
+            </div>
+            <div class="track_second_right">
+                <h4>Order Status:</h4>
+                <h4 id="order_status_display">UNDER PRODUCTION</h4> <!--pH-->
+            </div>
+        </div>
+
+        <div class="third_centralized"> <!--Order list-->
+            <div class="track_third">
+                <h1>Shirt A</h1>
+                <h1>Shirt B</h1>
+                <h1>Shirt C</h1>
+            </div>
+        </div>
+
+        <div class="track_fourth">
+            <h1>Payment</h1>
+            <div class="track_fourth_bottom">
+                <h4><b>Method: </b>Onsite Payment</h4>
+                <h4><b>Status: </b>Fully Paid</h4>
+                <h4><b>Attached: </b>Receipt</h4>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
