@@ -20,6 +20,9 @@
                     <input type="text" id="student_id" name="student_id" placeholder="eg: 202201007">
                     <br><input type="submit" value="Submit">
                 </form>
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
             </div>
             <div class="right_element">
                 <h1>Merch image here</h1>
