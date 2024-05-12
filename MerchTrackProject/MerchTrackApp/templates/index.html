@@ -1,5 +1,29 @@
+{% extends 'navigator.html' %} {% block title%} MerchTrack Index Page {% endblock %}
+{% block content %}
+<div class="main_element">
+    <div class="left_element">
+        <h1>Welcome to <b>MerchTrack</b></h1>
 
-<!DOCTYPE html>
+        <p><b>ENTER YOUR ACCOUNT NUMBER:</b></p>
+        
+        <form action="{% url 'trackOrder' %}" method="get">
+            <input type="text" id="student_id" name="student_id" placeholder="eg: 202201007">
+            <br><input type="submit" value="Submit">
+        </form>
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+    </div>
+    <div class="right_element">
+        <!-- <h1>Merch image here</h1> -->
+        {% load static %}
+        <img src="{% static 'assets/tshirtimage.png' %}" alt="Merch Image">
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <title>MerchTrack Index Page</title>
@@ -8,7 +32,7 @@
     </head>
 
     <body>
-        <div class="navigator">Navigator Bar Here</div>
+        
 
         <div class="main_element">
             <div class="left_element">
@@ -29,4 +53,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> -->
