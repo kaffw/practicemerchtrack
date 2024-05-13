@@ -37,7 +37,19 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: #AEAC99;
-    height: 670px;
+    height: 850px;
+    max-height: 1000px;
+}
+
+.right_element {
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    
+    /* max-width: 100%; */
+    box-sizing: border-box;
+    max-width: 100%;
+    border: 5px solid;
 }
 
 /* track_order.html */
