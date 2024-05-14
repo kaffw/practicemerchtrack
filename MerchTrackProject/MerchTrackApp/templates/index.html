@@ -1,17 +1,19 @@
 {% extends 'navigator.html' %} {% block title%} MerchTrack Index Page {% endblock %}
 {% block content %}
 <div class="index_main_container container">
-    <div class="left_element">
-        <h1>Welcome to <b>MerchTrack</b></h1>
+    <div class="left_element element">
+        <h1 style="width: 75%; solid blueviolet; text-align: center; font-size: 36px;">
+            Welcome to <b style="font-size: 48px;">MerchTrack!</b>
+        </h1>
 
         <p><b>ENTER YOUR ACCOUNT NUMBER:</b></p>
         
         <form action="{% url 'trackOrder' %}" method="get">
-            <input type="text" id="student_id" name="student_id" placeholder="eg: 202201007">
-            <br><input type="submit" value="Submit">
+            <input type="text" id="student_id" name="student_id" placeholder="eg: 202201007" style="width: 300px;">
+            <br><input type="submit" value="Submit" style="background-color: #3BAFE1; color: white; border-radius: 8px; width: 30%; height: 50%;">
         </form>
         {% if error_message %}
-            <p>{{ error_message }}</p>
+            <p style="color: red;">{{ error_message }}</p>
         {% endif %}
     </div>
     <div class="right_element">
