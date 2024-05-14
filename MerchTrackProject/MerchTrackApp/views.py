@@ -14,3 +14,9 @@ def trackOrder(request):
     except userInfo.DoesNotExist:
         student = None
         return render(request, "index.html", {'error_message': 'student id does not exist'})
+
+def aboutUs(request):
+    return render(request, "about_us.html")
+
+def contactUs(request):
+    return render(request, "contact_us.html")
