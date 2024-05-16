@@ -14,36 +14,42 @@
             </div>
         </div>
 
+        
         <div class="track_second">
-            <div class="track_second_left">
-                <h4 class="track_second_left_content" style="padding-right: 12px;"><b>Order Date:</b> February 2, 2024</h4> <!--date = pH-->
-                <h4 class="track_second_left_content" style="padding-right: 12px;">Estimated Distribution Date: March 22, 2024</h4> <!--date = pH-->
+            {% for itr in orders %}
+            <div class="track_second_left">   
+                <h4 class="track_second_left_content" style="padding-right: 12px;"><b>Order Date:</b> {{ itr.order_date }}</h4> <!--date = pH-->
+                <h4 class="track_second_left_content" style="padding-right: 12px;">Estimated Distribution Date: {{ itr.distribution_date }}</h4> <!--date = pH-->
             </div>
             <div class="track_second_right">
                 <h4>Order Status:</h4>
-                <h4 id="order_status_display">UNDER PRODUCTION</h4> <!--pH-->
+                <h4 id="order_status_display">{{ itr.order_status }}</h4> <!--pH-->
             </div>
+            {% endfor %}
         </div>
+        
 
-        <div class="third_centralized"> <!--Order list-->
+        <div class="third_centralized" style="border: 5px solid;"> <!--Order list-->
             <div class="track_third">
-                <h1>Shirt A</h1>
-                <h1>Shirt B</h1>
-                <h1>Shirt C</h1>
-                <h1>Shirt D</h1>
-                <h1>Shirt E</h1>
-                <h1>Shirt F</h1>
-                <h1>Shirt G</h1>
-                <h1>Shirt H</h1>
+                {% load static %}
+                {% for deets in order_details %}         
+                <div class="item">
+                    <img src="{% static 'assets/tshirtimage.png' %}" alt="Item Image">
+                    <h1>{{ deets.item_name }} {{ deets.item_color }} {{ deets.item_size }}</h1>
+                </div>
+                {% endfor %}
+                
             </div>
         </div>
 
         <div class="track_fourth">
             <h1>Payment</h1>
             <div class="track_fourth_bottom">
-                <h4><b>Method: </b>Onsite Payment</h4>
-                <h4><b>Status: </b>Fully Paid</h4>
-                <h4><b>Attached: </b>Receipt</h4>
+                {% for itr in orders%}
+                    <h4><b>Method: </b>{{ itr.payment_method }}</h4>
+                    <h4><b>Status: </b>{{ itr.payment_status }}</h4>
+                    <h4><b>Attached: </b>Receipt</h4>
+                {% endfor %}
             </div>
         </div>
         

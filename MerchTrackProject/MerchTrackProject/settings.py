@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'MerchTrackProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3', #postgresql-merch-track.alwaysdata.net
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
